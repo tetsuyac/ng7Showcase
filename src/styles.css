@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+.full-reach {
+  padding-left:0;
+  padding-right:0;
+  margin-left:0;
+  margin-right:0;
+}
+.nudge-rim {
+  margin:0 1rem 1rem;
+}
+
+.border-green {
+  border-top:1px solid green;
+  border-right:1px solid green;
+  border-bottom:1px solid green;
+  border-left:1px solid green;
+}
+
+.illuminate {
+  border: 1px solid orange;
+}
+
+/*.borer-greem:parent:last-child {*/
+/*  border-bottom:1px solid green;*/
+/*}*/

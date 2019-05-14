@@ -1,0 +1,51 @@
+<div class="text-center" style="padding-left:0; padding-right:0;">
+  <div class="">
+    <div class="col-3 form-group full-reach">
+      <label for="title" [ngClass]="{illuminate: editing}">Title</label>
+      <input
+        type="text"
+        id="title"
+        class="form-control"
+        [ngClass]='{illuminate: editing}'
+        (change)="onChanged()"
+        #titleInput>
+    </div>
+    <div class="col-3 form-group full-reach">
+      <label for="desc" [ngClass]="{illuminate: editing}">Description</label>
+      <input
+        type="text"
+        id="desc"
+        class="form-control"
+        [ngClass]='{illuminate: editing}'
+        (change)="onChanged()"
+        #descInput>
+    </div>
+    <div class="col-2 form-group full-reach">
+      <label for="price" [ngClass]="{illuminate: editing}">Price</label>
+      <input
+        type="number"
+        id="price"
+        class="form-control"
+        [ngClass]='{illuminate: editing}'
+        (change)="onChanged()"
+        #priceInput>
+    </div>
+    <div class="col-2 form-group full-reach">
+      <label for="unit" [ngClass]="{illuminate: editing}">Unit</label>
+      <input
+        type="number"
+        id="unit"
+        class="form-control"
+        style="min-width: 4rem;"
+        [ngClass]='{illuminate: editing}'
+        (change)="onChanged()"
+        #unitInput>
+    </div>
+  </div>
+  <div class="">
+    {{editing ? 'editing...' : ''}}
+    <button class="col-2 btn btn-success nudge-rim" type="button" (click)="onAddItem()">Add</button>
+    <button class="col-2 btn btn-danger nudge-rim" type="button" (click)="onDeleteItem()">Delete</button>
+    <button class="col-2 btn btn-primary nudge-rim" type="button" (click)="onClearEdit()">Clear</button>
+  </div>
+</div>

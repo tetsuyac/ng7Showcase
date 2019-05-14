@@ -1,0 +1,12 @@
+<div *ngIf="book"
+     (click)="onClick($event)"
+     class="border-green full-reach"
+     [ngClass]="{'selected': booksIx === index}"
+>
+  <div class="col-3 btn">{{book.title}}</div>
+  <div class="col-3 btn">{{book.desc}}</div>
+  <div class="col-2 btn">{{book.price}}</div>
+  <div class="col-2 btn">{{book.unit}}</div>
+  <div class="col-2 btn">{{book.total}}</div>
+  <ng-content></ng-content>
+</div>

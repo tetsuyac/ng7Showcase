@@ -1,0 +1,22 @@
+<div *ngIf="booksChanged" class="">
+  <div class="border-green full-reach" style="width:95%;">
+    <div
+      *ngFor="let head of heads;"
+      style="display: inline-block;"
+      class="btn"
+      [ngClass]="{'col-3': head === 'TITLE' || head === 'DESC','col-2': head === 'PRICE' || head === 'UNIT' || head === 'TOTAL'}"
+      [ngStyle]="{backgroundColor: head === 'TITLE' ? 'beige' : 'inherit'}"
+    >{{head}}</div>
+  </div>
+  <div *ngFor="let book of books; index as index">
+    <app-book
+      [book]="books[index]"
+      [booksIx]="booksIx"
+      [index]="index"
+      (clicked)="onClicked($event)"
+      style="display: inline-block; width:95%;"
+    >
+    </app-book>
+    <app-book-details></app-book-details>
+  </div>
+</div>
