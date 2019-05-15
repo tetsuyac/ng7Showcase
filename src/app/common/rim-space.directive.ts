@@ -2,10 +2,10 @@ import {Directive, HostBinding} from '@angular/core';
 
 @Directive({
   // tslint:disable-next-line:directive-selector
-  selector: '[appFullReach]'
+  selector: '[appRimSpace]'
 })
-export class FullReachDirective {
-  @HostBinding('class.full-reach') true;
+export class RimSpaceDirective {
+  @HostBinding('class.rim-space') true;
 
   constructor() {
   }

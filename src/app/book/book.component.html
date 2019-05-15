@@ -1,12 +1,14 @@
 <div *ngIf="book"
+     (mouseenter)="mouseEnter($event)" (mouseleave)="mouseLeave($event)"
      (click)="onClick($event)"
-     class="border-green full-reach"
-     [ngClass]="{'selected': booksIx === index}"
+     [ngClass]="{'hovered': booksIx !== index && hovered, 'selected': booksIx === index}"
+     class="book-elm rim-space border-green full-reach"
+     style="margin: 4px;"
 >
-  <div class="col-3 btn">{{book.title}}</div>
-  <div class="col-3 btn">{{book.desc}}</div>
-  <div class="col-2 btn">{{book.price}}</div>
-  <div class="col-2 btn">{{book.unit}}</div>
-  <div class="col-2 btn">{{book.total}}</div>
+  <div class="book title col-3 btn">{{book.title}}</div>
+  <div class="book desc col-3 btn">{{book.desc}}</div>
+  <div class="book price col-2 btn">{{book.price}}</div>
+  <div class="book unit col-2 btn">{{book.unit}}</div>
+  <div class="book total col-2 btn">{{book.total}}</div>
   <ng-content></ng-content>
 </div>

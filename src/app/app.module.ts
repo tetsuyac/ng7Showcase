@@ -12,6 +12,7 @@ import {FullReachDirective} from './common/full-reach.directive';
 import {NudgeRimDirective} from './common/nudge-rim.directive';
 import {BorderGreenDirective} from './common/border-green.directive';
 import {KeysPipe} from './common/keys.pipe';
+import { RimSpaceDirective } from './common/rim-space.directive';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import {KeysPipe} from './common/keys.pipe';
     NudgeRimDirective,
     BorderGreenDirective,
     KeysPipe,
+    RimSpaceDirective,
   ],
   imports: [
     BrowserModule

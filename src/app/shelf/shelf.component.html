@@ -1,12 +1,14 @@
 <div *ngIf="booksChanged" class="">
-  <div class="border-green full-reach" style="width:95%;">
-    <div
-      *ngFor="let head of heads;"
-      style="display: inline-block;"
-      class="btn"
-      [ngClass]="{'col-3': head === 'TITLE' || head === 'DESC','col-2': head === 'PRICE' || head === 'UNIT' || head === 'TOTAL'}"
-      [ngStyle]="{backgroundColor: head === 'TITLE' ? 'beige' : 'inherit'}"
-    >{{head}}</div>
+  <div class="full-reach" style="width:95%;">
+    <div class="border-green rim-space">
+      <div
+        *ngFor="let head of heads;"
+        [ngClass]="{'col-3': head === 'TITLE' || head === 'DESC','col-2': head === 'PRICE' || head === 'UNIT' || head === 'TOTAL'}"
+        [ngStyle]="{backgroundColor: head === 'TITLE' ? 'beige' : 'inherit'}"
+        style="display: inline-block;"
+        class="btn"
+      >{{head}}</div>
+    </div>
   </div>
   <div *ngFor="let book of books; index as index">
     <app-book

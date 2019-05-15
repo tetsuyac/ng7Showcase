@@ -6,8 +6,8 @@
         type="text"
         id="title"
         class="form-control"
-        [ngClass]='{illuminate: editing}'
         (change)="onChanged()"
+        [ngClass]='{illuminate: editing}'
         #titleInput>
     </div>
     <div class="col-3 form-group full-reach">
@@ -16,8 +16,8 @@
         type="text"
         id="desc"
         class="form-control"
-        [ngClass]='{illuminate: editing}'
         (change)="onChanged()"
+        [ngClass]='{illuminate: editing}'
         #descInput>
     </div>
     <div class="col-2 form-group full-reach">
@@ -26,8 +26,8 @@
         type="number"
         id="price"
         class="form-control"
-        [ngClass]='{illuminate: editing}'
         (change)="onChanged()"
+        [ngClass]='{illuminate: editing}'
         #priceInput>
     </div>
     <div class="col-2 form-group full-reach">
@@ -37,15 +37,15 @@
         id="unit"
         class="form-control"
         style="min-width: 4rem;"
-        [ngClass]='{illuminate: editing}'
         (change)="onChanged()"
+        [ngClass]='{illuminate: editing}'
         #unitInput>
     </div>
   </div>
   <div class="">
     {{editing ? 'editing...' : ''}}
-    <button class="col-2 btn btn-success nudge-rim" type="button" (click)="onAddItem()">Add</button>
-    <button class="col-2 btn btn-danger nudge-rim" type="button" (click)="onDeleteItem()">Delete</button>
-    <button class="col-2 btn btn-primary nudge-rim" type="button" (click)="onClearEdit()">Clear</button>
+    <button class="add col-2 btn btn-success nudge-rim" type="button" (click)="onAddItem()">Add</button>
+    <button class="del col-2 btn btn-danger nudge-rim" type="button" (click)="onDeleteItem()">Delete</button>
+    <button class="dit col-2 btn btn-primary nudge-rim" type="button" (click)="onClearEdit()">Clear</button>
   </div>
 </div>

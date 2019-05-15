@@ -11,6 +11,18 @@ import {_g} from '../common/global';
     .form-group {
       display: inline-block;
     }
+    button.add, button.del, button.dit {
+      color: dimgray;
+    }
+    button.add {
+      background-color: khaki;
+    }
+    button.del {
+      background-color: papayawhip;
+    }
+    button.dit {
+      background-color: beige;
+    }
   `]
 })
 export class HeaderComponent implements OnInit {

@@ -8,5 +8,6 @@ export const _g = {
   DESC: 'DESC',
   PRICE: 'PRICE',
   UNIT: 'UNIT',
-  TOTAL: 'TOTAL'
+  TOTAL: 'TOTAL',
+  APRICOT: '#ffd8b1',
 };

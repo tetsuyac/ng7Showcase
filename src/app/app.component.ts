@@ -7,7 +7,7 @@ import {Component} from '@angular/core';
     .jumbotron {
       padding: 1rem 0 1rem;
       margin-top: 2rem;
-      background-color: beige;
+      background-color: gold;
     }`]
 })
 export class AppComponent {

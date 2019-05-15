@@ -10,14 +10,6 @@ import {KeysPipe} from '../common/keys.pipe';
   selector: 'app-shelf',
   templateUrl: './shelf.component.html',
   styles: [`
-    .row {
-      cursor: pointer;
-    }
-
-    .row.selected {
-      background-color: lightgoldenrodyellow;
-    }
-
     app-book-details {
       cursor: pointer;
     }
