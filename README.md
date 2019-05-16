@@ -1,5 +1,6 @@
 # ng7Showcase, angular 7 features showcase
 
+    rev 0.2    05/15/2019: selectable column total, sticky header(ongoing)
     rev 0.1    05/15/2019: touch ups: theme, book.hover, select
     rev 0.init 05/13/2019: initial cut
 
@@ -27,4 +28,7 @@
 
 ## references
 #### angular
-https://angular.io/
+https://angular.io/ 
+### sticky header
+https://netbasal.com/reactive-sticky-header-in-angular-12dbffb3f1d3
+

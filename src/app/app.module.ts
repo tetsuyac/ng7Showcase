@@ -1,4 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
@@ -13,6 +14,7 @@ import {NudgeRimDirective} from './common/nudge-rim.directive';
 import {BorderGreenDirective} from './common/border-green.directive';
 import {KeysPipe} from './common/keys.pipe';
 import { RimSpaceDirective } from './common/rim-space.directive';
+import { HeaderOuterComponent } from './header-outer/header-outer.component';
 
 @NgModule({
   declarations: [
@@ -27,9 +29,11 @@ import { RimSpaceDirective } from './common/rim-space.directive';
     BorderGreenDirective,
     KeysPipe,
     RimSpaceDirective,
+    HeaderOuterComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule
   ],
   providers: [ShelfService],
   bootstrap: [AppComponent]

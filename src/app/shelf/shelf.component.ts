@@ -13,16 +13,20 @@ import {KeysPipe} from '../common/keys.pipe';
     app-book-details {
       cursor: pointer;
     }
+    .hoverable {
+      cursor: pointer;
+    }
   `]
 })
 
 export class ShelfComponent implements OnInit {
   books: BookModel[];
-  booksChanged: boolean;
   booksSub: Subscription;
   booksIx: number;
-  booksIxChanged: boolean;
   booksIxSub: Subscription;
+  booksTotalsKey: string;
+  // booksTotalsKeyChanged: boolean;
+  booksTotalsKeySub: Subscription;
   heads: string[];
   headsReady: boolean;
 
@@ -47,34 +51,39 @@ export class ShelfComponent implements OnInit {
   //
   ngOnInit() {
     this.books = undefined;
-    this.booksChanged = false;
-
     this.booksSub = this.shelf.booksChanged
       .subscribe(
         (books: BookModel[]) => {
           this.books = books;
           if (!this.headsReady) {
-            this.heads = Object.keys(books[0]).map(head => head.toUpperCase());
+            this.heads = Object.keys(books[0]).map(head => head);
             this.headsReady = true;
           }
-          this.booksChanged = true;
         }
       );
 
     this.booksIx = -1;
-    this.booksIxChanged = false;
     this.booksIxSub = this.shelf.booksIxChanged
       .subscribe(
         (booksIx: number) => {
           this.booksIx = booksIx;
-          this.booksIxChanged = true;
         }
       );
-    this.shelf.tapBooksAndIx();
+
+    this.booksTotalsKey = '';
+    // this.booksTotalsKeyChanged = false;
+    this.booksTotalsKeySub = this.shelf.booksTotalsKeyChanged
+      .subscribe(
+        (booksTotalsKey: string) => {
+          this.booksTotalsKey = booksTotalsKey;
+          // this.booksTotalsKeyChanged = true;
+        }
+      );
+
+    this.shelf.tapAll();
   }
 
-  onClicked(event) {
-    console.log(event.target.value);
-    console.log('clicked');
+  onClicked(head) {
+    this.shelf.setBooksTotalsKey(head);
   }
 }

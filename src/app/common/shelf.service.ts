@@ -11,9 +11,10 @@ import {BooksTotalsModel} from './books-totals-model';
 export class ShelfService {
   private books: BookModel[];
   private booksIx: number;
+  booksTotalsKey: string;
   booksChanged = new EventEmitter<BookModel[]>();
   booksIxChanged = new EventEmitter<number>();
-  booksTotalsKey: string;
+  booksTotalsKeyChanged = new EventEmitter<string>();
 
   constructor() {
     this.books = [
@@ -24,6 +25,12 @@ export class ShelfService {
     ];
     this.booksIx = 0 <= this.books.length ? 0 : -1;
     this.booksTotalsKey = _g.title;
+  }
+
+  tapAll() {
+    this.tapBooksTotalsKey();
+    this.tapBooks();
+    this.tapBooksIx();
   }
 
   tapBooksAndIx() {
@@ -39,9 +46,20 @@ export class ShelfService {
     this.booksIxChanged.next(this.booksIx);
   }
 
+  tapBooksTotalsKey() {
+    this.booksTotalsKeyChanged.next(this.booksTotalsKey);
+  }
+
   setBooksIx(booksIx) {
     this.booksIx = booksIx;
     this.tapBooksIx();
+  }
+
+  setBooksTotalsKey(booksTotalsKey) {
+    this.booksTotalsKey = booksTotalsKey;
+    this.setBooksAllTotals();
+    this.tapBooks();
+    this.tapBooksTotalsKey();
   }
 
   setBooksAllTotals() {
@@ -68,15 +86,15 @@ export class ShelfService {
     }, {})[colHead] || 0;
   }
 
-  tapTotalByHead(colHead, ttlVal) {
-    this.books.forEach(book => {
-      if (book[colHead] === colHead) {
-        book[_g.total] = ttlVal;
-      }
-    });
-    this.tapBooks();
-  }
-
+  // tapTotalByHead(colHead, ttlVal) {
+  //   this.books.forEach(book => {
+  //     if (book[colHead] === colHead) {
+  //       book[_g.total] = ttlVal;
+  //     }
+  //   });
+  //   this.tapBooks();
+  // }
+  //
   addBook(book: BookModel[]) {
     this.books.push(...book);
     this.setBooksAllTotals();
