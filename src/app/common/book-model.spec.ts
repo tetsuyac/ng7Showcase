@@ -3,15 +3,12 @@ import {ComponentFixture, TestBed} from '@angular/core/testing';
 
 describe('BookModel', () => {
   let book: BookModel;
-  let fixture: ComponentFixture<BookModel>;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent((BookModel));
-    book = fixture.componentInstance;
-    fixture.detectChanges();
+    book = new BookModel();
   });
 
   it('should create an instance', () => {
-    expect(book).toBeTruthy();
+    expect(book instanceof BookModel).toBe(true, 'instance of BookModel');
   });
 });

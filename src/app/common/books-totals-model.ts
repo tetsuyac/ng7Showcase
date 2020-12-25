@@ -6,7 +6,7 @@ export class BooksTotalsModel {
   price: number[];
   unit: number[];
 
-  constructor(books: BookModel[]) { // books not used for now.
+  constructor(books: BookModel[] = []) { // books not used for now.
     this.title = [];
     this.desc = [];
     this.price = [];

@@ -1,6 +1,8 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {ShelfComponent} from './shelf.component';
+import {BookComponent} from '../book/book.component';
+import {BookDetailsComponent} from '../book-details/book-details.component';
 
 describe('ShelfComponent', () => {
   let component: ShelfComponent;
@@ -8,7 +10,10 @@ describe('ShelfComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ShelfComponent]
+      declarations: [
+        ShelfComponent,
+        BookComponent,
+      BookDetailsComponent]
     })
       .compileComponents();
   }));
